@@ -14,7 +14,7 @@ import { FormsModule } from '@angular/forms';
   ],
   exports:[
     NgZorroAntdModule,
-    FormsModule
+    FormsModule,
   ]
 })
 export class ShareModule { }
