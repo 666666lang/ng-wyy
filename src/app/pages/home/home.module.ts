@@ -5,6 +5,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { WyCarouselComponent } from './components/wy-carousel/wy-carousel.component';
+import { ShareModule } from 'src/app/share/share.module';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { WyCarouselComponent } from './components/wy-carousel/wy-carousel.compon
   imports: [
     CommonModule,
     HomeRoutingModule,
-    NgZorroAntdModule
+    NgZorroAntdModule,
+    ShareModule
   ]
 })
 export class HomeModule { }

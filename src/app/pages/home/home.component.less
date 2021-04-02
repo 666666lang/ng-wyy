@@ -1,5 +1,14 @@
 @import "../../../assets/styles/varibles";
 @import "../../../assets/styles/mixins";
+.nav_a_for{
+  display: inline-block;
+  padding: 0 12px;
+  border-right: 1px solid @border-color-base;
+  //margin-left: 15px;
+  &:last-child{
+    border-right: none;
+  }
+}
 .home{
   .banner-item{
     display: block;
