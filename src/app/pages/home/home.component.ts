@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { NzCarouselComponent } from 'ng-zorro-antd';
+import { map } from 'rxjs/internal/operators';
 import { Banner, HotTag, Singer, SongSheet } from 'src/app/services/data-types/common.types';
 import { HomeService} from 'src/app/services/home.service';
 import { SingerService } from 'src/app/services/singer.service';
@@ -20,12 +22,19 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private homeService:HomeService,
-    private singerService:SingerService
+    private singerService:SingerService,
+    private route:ActivatedRoute
     ) { 
-    this.getBanners();
-    this.getHotTags();
-    this.getPersonalizedSheetList();
-    this.getEnterSinger();
+      this.route.data.pipe(map(res => res.homeDatas)).subscribe(([banners, hotTags, songSheetList, singers]) => {
+        this.banners = banners;
+        this.hotTags = hotTags;
+        this.songSheetList = songSheetList;
+        this.singers = singers;
+      });
+    // this.getBanners();
+    // this.getHotTags();
+    // this.getPersonalizedSheetList();
+    // this.getEnterSinger();
   }
 
   private getBanners(){
