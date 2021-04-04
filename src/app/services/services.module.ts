@@ -7,7 +7,7 @@ export const API_CONFIG = new InjectionToken('ApiConfigToken');
   imports: [
   ],
   providers:[
-    {provide:API_CONFIG,useValue:'http://www.hjmin.com/'}
+    {provide:API_CONFIG,useValue:'http://musicapi.leanapp.cn/'}
   ]
 })
 export class ServicesModule { }

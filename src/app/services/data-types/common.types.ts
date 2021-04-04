@@ -16,3 +16,25 @@ export type SongSheet = {
     picUrl:string;
     playCount:number;
 }
+
+export type Singer = {
+    id:number;
+    name:string;
+    picUrl:string;
+    albumSize:number;
+}
+
+export interface SingerDetail {
+    artist: Singer;
+    hotSongs: Song[];
+  }
+
+// 歌曲
+export interface Song {
+    id: number;
+    name: string;
+    url: string;
+    ar: Singer[];
+    al: { id: number; name: string; picUrl: string };
+    dt: number;
+  }
